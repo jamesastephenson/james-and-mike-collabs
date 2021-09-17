@@ -1,0 +1,91 @@
+{
+    "gin" : [
+        {
+            "drinkName" : "Martini",
+            "ingredient1" : "2 oz Gin",
+            "ingredient2" : "1 oz Vermouth",
+            "ingredient3" : "1 Green Olive",
+            "instructions" : "Pour gin and vermouth into a cocktail shaker of ice and shake until combined. Strain and pour into a glass and garnish with olive."
+        } ,
+
+        {
+            "drinkName" : "Negroni",
+            "ingredient1" : "1 oz Gin",
+            "ingredient2" : "1 oz Campari",
+            "ingredient3" : "1 oz Sweet Vermouth",
+            "instructions" : "Combine gin, campari, and sweet vermouth into a glass of ice and stir until combined. Optionally add an orange peel for garnish."
+        }
+    ] , 
+
+    "rum" : [
+        {
+            "drinkName" : "Cuba Libre",
+            "ingredient1" : "2 oz Rum",
+            "ingredient2" : "4 oz Cola",
+            "ingredient3" : "1 Lime Wedge",
+            "instructions" : "Combine rum and cola into a glass of ice and stir until combined. Squeeze in some lime juice and add the lime wedge for garnish."
+        } ,
+
+        {
+            "drinkName" : "Daiquiri",
+            "ingredient1" : "2 oz Light Rum",
+            "ingredient2" : "1 oz Lime Juice",
+            "ingredient3" : ".75 oz Simple Syrup",
+            "instructions" : "Pour rum, lime juice, and simple syrup into a cocktail shaker of ice and shake until combined. Strain and pour into a glass, optionally garnish with lime peel."
+        }
+    ] , 
+
+    "tequila" : [
+        {
+            "drinkName" : "Margarita",
+            "ingredient1" : "2 oz Tequila",
+            "ingredient2" : "0.5 oz Triple Sec",
+            "ingredient3" : "1 oz Lime Juice",
+            "instructions" : "Pour tequila, triple sec, and lime juice into a cocktail shaker of ice and shake until combined. Strain and pour into a glass, optionally add simple syrup or garnish with lime peel."
+        } ,
+
+        {
+            "drinkName" : "Tequila Sunrise",
+            "ingredient1" : "1.5 oz Tequila",
+            "ingredient2" : "0.5 oz Grenadine",
+            "ingredient3" : "3 oz Orange Juice",
+            "instructions" : "fAdd the tequila and orange juice to a chilled glass filled with ice and stir. Slowly pour in the grenadine to achieve a layered effect."
+        }
+    ] , 
+
+    "vodka" : [
+        {
+            "drinkName" : "Melon Ball",
+            "ingredient1" : "1.5 oz Vodka",
+            "ingredient2" : "0.5 oz Melon Liquer",
+            "ingredient3" : "3 oz Orange Juice",
+            "instructions" : "Pour vodka, melon liquer, and orange juice into a cocktail shaker of ice and shake until combined. Strain and pour into a glass, optionally garnish with honeydew melon."
+        } ,
+
+        {
+            "drinkName" : "White Russian",
+            "ingredient1" : "1.5 oz Vodka",
+            "ingredient2" : "0.75 oz Coffee Liquer",
+            "ingredient3" : "3 oz Half-and-Half",
+            "instructions" : "Combine vodka, coffee liquer, and half in half in a glass of ice and stir to combine."
+        }
+    ] , 
+
+    "whiskey" : [
+        {
+            "drinkName" : "Manhattan",
+            "ingredient1" : "2 oz Whiskey",
+            "ingredient2" : "1 oz Sweet Vermouth",
+            "ingredient3" : "2 dashes of Angostura Bitters",
+            "instructions" : "Combine whiskey, sweet vermouth, and bitters in a glass of ice and stir to combine. Optionally garnish with a Maraschino cherry."
+        } ,
+
+        {
+            "drinkName" : "Old Fasioned",
+            "ingredient1" : "2 oz Whiskey",
+            "ingredient2" : "0.75 oz Simple Syrup",
+            "ingredient3" : "2 dashes of Angostura Bitters",
+            "instructions" : "Combine whiskey, simple syrup, and bitters in a glass of ice and stir to combine. Optionally garnish with an orange peel."
+        }
+    ] 
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chooze Your Booze</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Choose Your Booze</h1>
+    <label>
+        <select name="alcohol" id="dropdown">
+            <option value="-">Select a Spirit</option>
+            <option value="gin">Gin</option>
+            <option value="rum">Rum</option>
+            <option value="tequila">Tequila</option>
+            <option value="vodka">Vodka</option>
+            <option value="whiskey">Whiskey</option>
+        </select>
+    </label>
+    <button type="button" id="button">Get Drinks!</button>
+
+    <div id="drinkPage" class="hidden">
+        <h2 id="drinkName">Whiskey Sour</h2>
+        <img src="" id="image" alt="drink image" width="400">
+        <h3>Ingredients</h3>
+        <p id="ingredient1"></p>
+        <p id="ingredient2"></p>
+        <p id="ingredient3"></p>
+
+        <h3>Instructions</h3>
+        <p id="instructions"></p>
+    </div>
+    
+    <br>
+    
+    <footer>A website by James Stephenson and Michael Gardiner. September 2021.<br>
+    Melon Ball image from dishesdelish.com. All other images from liquor.com.</footer>
+
+    <script src="data.json"></script>
+    <script src="script.js"></script>
+</body>
+</html>

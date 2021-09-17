@@ -1,0 +1,4 @@
+-added @keyframe info, hidden class, and fadePanel class to CSS
+-added 20px bottom padding to #drinkPage
+-center aligned text for select-list
+-changed max width for smallest screen size

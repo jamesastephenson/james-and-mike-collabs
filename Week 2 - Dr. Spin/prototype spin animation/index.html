@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spin test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>spin test</h1>
+
+    <img src="antidepressants.jpg" alt="antidepressants" id="image" width="400">
+
+    <br>
+
+    <select name="L or R" id="leftOrRight">
+        <option value="-">-</option>
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+    </select>
+
+    <input type="number" id="input">
+
+    <button type="button" onclick="spinItem(document.getElementById('input').value, document.getElementById('leftOrRight').value)" id="btn">Spin</button>
+    <script src="script.js"></script>
+</body>
+</html>

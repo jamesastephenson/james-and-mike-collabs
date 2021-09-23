@@ -1,0 +1,68 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #b4b4b4;
+}
+
+.header {
+    width: 100%;
+    background-image: linear-gradient(to bottom, #1D1D1D, #535353 );
+    color: #FFFFFF;
+    text-align: center;
+    padding: .5em;
+    border-radius: 15px;
+}
+
+.mainContent {
+    text-align: center;
+
+}
+
+.controls {
+    text-align: center;
+
+}
+
+.wrapper {
+    width: 70%;
+    margin: auto;
+}
+
+
+
+/* things michael do: style the button, dropdown and input  
+
+
+possibly add overflow, also make things responsive  strike font sizes
+
+     */
+
+
+
+
+
+
+/* css animations */
+
+.spinRight {
+    animation: spinRight 1s linear;
+}
+
+.spinLeft {
+    animation: spinLeft 1s linear;
+}
+
+@keyframes spinRight {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinLeft {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}

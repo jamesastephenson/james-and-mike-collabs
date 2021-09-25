@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Spin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="header">
+    <h1>Dr. Spin</h1>
+</div>
+
+<div class="wrapper">
+
+    <div class="mainContent">
+        <p>Take the image below for a spin! Choose left/right and how many spins, then hit Spin!</p>
+        <img src="Images/antidepressants.jpg" alt="antidepressants" id="image" width="400">
+    </div>
+
+    <br>
+
+    <div class="controls"> 
+        <select name="L or R" id="leftOrRight">
+            <option value="-">choose direction</option>
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+        </select>
+
+        <input value="1" type="number" id="input">
+
+        <button type="button" onclick="spinItem(document.getElementById('input').value, document.getElementById('leftOrRight').value)" id="btn">Spin!</button>
+    </div>
+
+    <footer>A website by James Stephenson and Michael Gardiner. Antidepressants.jpg has no origin.</footer>
+</div>
+
+    <script src="Scripts/script.js"></script>
+</body>
+</html>

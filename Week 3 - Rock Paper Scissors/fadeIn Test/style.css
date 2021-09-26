@@ -1,0 +1,40 @@
+
+
+#fadeDiv {
+    background-color: black;
+    opacity: 0;
+}
+
+#fadeText {
+    opacity: 0;
+    color: white;
+}
+
+/* --------------- css animations -----------*/
+
+.spinRight {
+    animation: spinRight 1s linear;
+}
+
+.spinLeft {
+    animation: spinLeft 1s linear;
+}
+
+.fadeIn {
+    animation: fadeIn 1s linear;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes spinRight {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinLeft {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}

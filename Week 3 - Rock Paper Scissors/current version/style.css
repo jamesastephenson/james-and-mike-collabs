@@ -1,3 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    border-radius: 15px;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
 * {
     box-sizing: border-box;
@@ -34,7 +42,7 @@ h1 {
 
 }
 
-.playerCard {
+.card {
     padding: 1em;
     width: 50%;
     flex: 1;
@@ -107,4 +115,35 @@ h1 {
         font-size: 4em;
     }
 
+}
+
+
+
+/* -------------- css animations --------------- */
+.spinRight {
+    animation: spinRight 0.25s linear;
+}
+
+.spinLeft {
+    animation: spinLeft 0.25s linear;
+}
+
+.fadeIn {
+    animation: fadeIn 1s linear;
+}
+
+@keyframes spinRight {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinLeft {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    25% {opacity: 0;}
+    75% {opacity: 1;}
 }

@@ -1,97 +1,119 @@
-// To add:
-    // animations for the game with proper timing
-    // reset button to reset the game space
-    // you can get rid of the winLoseFlag if it proves unnecessary
-
 // get DOM elements
 const cpuChoiceOutput = document.getElementById("cpuChoice");
 const userChoiceOutput = document.getElementById("userChoice");
 const victoryText = document.getElementById("victoryText");
-
-// arr for CPU move choice
-const cpuArray = ["Rock", "Paper", "Scissors"];
-
-var winLoseFlag = "";
-
-// Randomly selects move for Computer
-function generateMove() {
-    return cpuArray[Math.floor(Math.random() * cpuArray.length)];
-}
+const playerCard = document.getElementById("playerCard");
+const cpuCard = document.getElementById("cpuCard");
 
 // clear DOM from previous game
-function gameStart() {
+function resetGame() {
+    resetAnimation(playerCard);
+    resetAnimation(cpuCard);
+    resetAnimation(victoryText);
     victoryText.innerHTML = "";
-    cpuChoiceOutput.innerHTML = "";
-    userChoiceOutput.innerHTML = "";
+}
+
+// Randomly select move for Computer
+function generateMove() {
+    const cpuArray = ["Rock", "Paper", "Scissors"];
+    return cpuArray[Math.floor(Math.random() * cpuArray.length)];
 }
 
 // sets player choice to Rock, generates CPU move, and runs game logic
 function chooseRock() {
+    // Reset game state and generate moves
+    resetGame();
     var playerChoice = "Rock";
     var cpuChoice = generateMove();
 
-    if (playerChoice == "Rock" && cpuChoice == "Rock") {
-        victoryText.innerHTML = "Draw!";
-        cpuChoiceOutput.innerHTML = "Rock";
-        userChoiceOutput.innerHTML = "Rock";
-        winLoseFlag = "D";
-    } else if (playerChoice == "Rock" && cpuChoice == "Paper") {
-        victoryText.innerHTML = "You Lose!";
-        cpuChoiceOutput.innerHTML = "Paper";
-        userChoiceOutput.innerHTML = "Rock";
-        winLoseFlag = "L";
-    } else if (playerChoice == "Rock" && cpuChoice == "Scissors") {
-        victoryText.innerHTML = "You Win!";
-        cpuChoiceOutput.innerHTML = "Scissors";
-        userChoiceOutput.innerHTML = "Rock";
-        winLoseFlag = "W";
-    }
+    // add images and apply spin animation (adding css class)
+    playerCard.src = "Images/rock.png";
+    cpuCard.src = `Images/${cpuChoice.toLowerCase()}.png`;
+    spinItem(playerCard, 1, "right");
+    spinItem(cpuCard, 1, "left");
+
+    // Game Logic
+    victoryText.classList.add("fadeIn");
+    if (playerChoice == cpuChoice) {victoryText.innerHTML = "Draw!";} 
+    else if (cpuChoice == "Paper") {victoryText.innerHTML = "You Lose!";} 
+    else if (cpuChoice == "Scissors") {victoryText.innerHTML = "You Win!";}
 }
 
 // sets player choice to Paper, generates CPU move, and runs game logic
 function choosePaper() {
+    // Reset game state and generate moves
+    resetGame();
     var playerChoice = "Paper";
     var cpuChoice = generateMove();
 
-    if (playerChoice == "Paper" && cpuChoice == "Paper") {
-        victoryText.innerHTML = "Draw!";
-        cpuChoiceOutput.innerHTML = "Paper";
-        userChoiceOutput.innerHTML = "Paper";
-        winLoseFlag = "D";
-    } else if (playerChoice == "Paper" && cpuChoice == "Scissors") {
-        victoryText.innerHTML = "You Lose!";
-        cpuChoiceOutput.innerHTML = "Scissors";
-        userChoiceOutput.innerHTML = "Paper";
-        winLoseFlag = "L";
-    } else if (playerChoice == "Paper" && cpuChoice == "Rock") {
-        victoryText.innerHTML = "You Win!";
-        cpuChoiceOutput.innerHTML = "Rock";
-        userChoiceOutput.innerHTML = "Paper";
-        winLoseFlag = "W";
-    }
+    // add images and apply spin animation (adding css class)
+    playerCard.src = "Images/paper.png";
+    cpuCard.src = `Images/${cpuChoice.toLowerCase()}.png`;
+    spinItem(playerCard, 1, "right");
+    spinItem(cpuCard, 1, "left");
+
+    // Game Logic
+    victoryText.classList.add("fadeIn");
+    if (playerChoice == cpuChoice) {victoryText.innerHTML = "Draw!";} 
+    else if (cpuChoice == "Scissors") {victoryText.innerHTML = "You Lose!";} 
+    else if (cpuChoice == "Rock") {victoryText.innerHTML = "You Win!";}
 }
 
 // sets player choice to Scissors, generates CPU move, and runs game logic
 function chooseScissors() {
+    // Reset game state and generate moves
+    resetGame();
     var playerChoice = "Scissors";
     var cpuChoice = generateMove();
 
-    if (playerChoice == "Scissors" && cpuChoice == "Scissors") {
-        victoryText.innerHTML = "Draw!";
-        cpuChoiceOutput.innerHTML = "Scissors";
-        userChoiceOutput.innerHTML = "Scissors";
-        winLoseFlag = "D";
-    } else if (playerChoice == "Scissors" && cpuChoice == "Rock") {
-        victoryText.innerHTML = "You Lose!";
-        cpuChoiceOutput.innerHTML = "Rock";
-        userChoiceOutput.innerHTML = "Scissors";
-        winLoseFlag = "L";
-    } else if (playerChoice == "Scissors" && cpuChoice == "Paper") {
-        victoryText.innerHTML = "You Win!";
-        cpuChoiceOutput.innerHTML = "Paper";
-        userChoiceOutput.innerHTML = "Scissors";
-        winLoseFlag = "W";
+    // add images and apply spin animation (adding css class)
+    playerCard.src = "Images/scissors.png";
+    cpuCard.src = `Images/${cpuChoice.toLowerCase()}.png`;    
+    spinItem(playerCard, 1, "right");
+    spinItem(cpuCard, 1, "left");
+
+    // Game Logic
+    victoryText.classList.add("fadeIn");
+    if (playerChoice == cpuChoice) {victoryText.innerHTML = "Draw!";} 
+    else if (cpuChoice == "Rock") {victoryText.innerHTML = "You Lose!";} 
+    else if (cpuChoice == "Paper") {victoryText.innerHTML = "You Win!";}
+}
+
+// Set spin direction and number of iterations for each spinning element
+function spinItem(item, spinCount, spinDirection) {
+    if (spinDirection == "right") {
+        item.style.animationIterationCount = spinCount;
+        item.classList.add("spinRight");
+    } else if (spinDirection == "left") {
+        item.style.animationIterationCount = spinCount;
+        item.classList.add("spinLeft");
+    } else {
+        alert("Uh oh.");
     }
 }
 
-gameStart();
+// Remove spinDirection classes and resets CSS animations
+function resetAnimation(item) {
+    // remove fadeIn class from victoryText
+    if (item.classList.contains("fadeIn")) {
+        item.classList.remove("fadeIn");
+        void item.offsetWidth;
+    }
+
+    // remove spin classes from player and cpu cards
+    if (item.classList.contains("spinRight")) {
+        item.classList.remove("spinRight");
+        void item.offsetWidth;  // reset CSS animation
+    } else {
+        item.classList.remove("spinLeft");
+        void item.offsetWidth;  // reset CSS animation
+    }
+}
+
+resetGame();
+
+// Debriefing notes:
+    // there is no reason to have each button click be a separate function
+        // just have button click start the game and then have a button value go into the playerChoice variable
+        // then just structure game logic better with nesting so it's less space to do the same thing
+        // saves on lines, makes stuff more replicable

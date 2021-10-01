@@ -13,28 +13,31 @@
     </div>
 
     <div id="instructions">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni et sint quam atque iusto? Pariatur fugit voluptatibus soluta nobis recusandae corrupti sapiente iste et quasi, possimus omnis non praesentium rerum sunt. Vero fugit, sunt odio quasi neque quam ipsum earum necessitatibus. Nihil quo perspiciatis fugit aliquid corrupti eligendi quae. Nisi.</p>
+        <p>Select Rock, Paper or Scissors and SEIZE YOUR DESTINY!  </p>
     </div>
 
     <div id="gameboard">
-        <h2>User Choice:</h2>
-        <span id="userChoice"></span>
+        <div class="playerCard">
+            <h2>User Choice:</h2>
+            <span id="userChoice"></span>
+        </div>
 
+        <div class="playerCard">
+            <h2>CPU Choice:</h2>
+            <span id="cpuChoice"></span>
+        </div>
 
-        <h2>CPU Choice:</h2>
-        <span id="cpuChoice"></span>
-
-        <h3 id="victoryText"></h3>
     </div>
+    <h3 id="victoryText"></h3>
 
     <div id="controls">
-        <button type="button" onclick="chooseRock()">Rock</button>
-        <button type="button" onclick="choosePaper()">Paper</button>
-        <button type="button" onclick="chooseScissors()">Scissors</button>
+        <button type="button" onclick="chooseRock()" class="btn">R</button>
+        <button type="button" onclick="choosePaper()" class="btn">P</button>
+        <button type="button" onclick="chooseScissors()" class="btn">S</button>
     </div>
 
-    
-    <footer>A website by James Stephenson and Michael Gardiner. Card images from Kaiji.</footer>
+    <footer id="footer">A website by James Stephenson and Michael Gardiner. Card images from Kaiji.</footer>
+
     <script src="script.js"></script>
 </body>
 </html>

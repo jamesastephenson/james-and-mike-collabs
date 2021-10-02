@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <h1>RPS</h1>
+    </div>
+
+    <div id="instructions">
+        <p>Select Rock, Paper or Scissors and SEIZE YOUR DESTINY!  </p>
+    </div>
+
+    <div id="gameboard">
+        <div class="card">
+            <h2>User Choice:</h2>
+            <img id="playerCard" src="" alt="">
+        </div>
+
+        <div class="card">
+            <h2>CPU Choice:</h2>
+            <img id="cpuCard" src="" alt="">
+        </div>
+
+    </div>
+    <h3 id="victoryText"></h3>
+
+    <div id="controls">
+        <button type="button" onclick="chooseRock()" class="btn">R</button>
+        <button type="button" onclick="choosePaper()" class="btn">P</button>
+        <button type="button" onclick="chooseScissors()" class="btn">S</button>
+    </div>
+
+    <footer id="footer">A website by James Stephenson and Michael Gardiner. Card images from Kaiji.</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

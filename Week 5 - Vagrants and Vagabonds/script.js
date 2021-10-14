@@ -1,6 +1,11 @@
 // note to self: let checked status of radio buttons or dropdown choices be used as an argument in functions
     // this way you can change what the function will output based on this, rather than making a million different functions
 
+const gender = document.getElementById('gender');
+const race = document.getElementById('race');
+const submit = document.getElementById('submit');
+const button = document.getElementById('submit');
+
 // Arrays for random generation
 var firstNamesMale = ['John', 'Legolas', 'George', 'Richard',  'Danny', 'Huckleberry', 'Clint', 'Woodsworth', 'Reginald'];
 var firstNamesFemale = ['Clementine', 'River', 'Cordelia', 'Shiela', 'Joan', 'Cathryn', 'Geneva', 'Rita', 'Layla'];
@@ -18,66 +23,64 @@ var likesAndDislikes = [
     'Architecture', 'Skeletons', 'Goblins', 'Charity', 'Fine Linen',
     'Vagrants', 'Vagabonds', 'Dragons', 'Dungeons', 'Scholarship'];
 
-/*
 function generateName() {
     // define our array
     var nameArr = [];
 
     // contain logic if it's a male, female, or gender neutral name
-    if (checkbox says it's male names) {
-        nameArr = firstNamesMale.concat(firstNamesGenderNeutral);
-    } else if (checkbox says female names only) {
-        nameArr = firstNamesFemale.concat(firstNamesGenderNeutral);
-    } else {
-        nameArr = firstNamesMale.concat(firstnamesFemale, firstNamesGenderNeutral);
-    }
+    if (gender.value == 'Male') {nameArr = firstNamesMale.concat(firstNamesGenderNeutral);} 
+    else if (gender.value == 'Female') {nameArr = firstNamesFemale.concat(firstNamesGenderNeutral);} 
+    else if (gender.value == 'Nonbinary') {nameArr = firstNamesGenderNeutral;} 
+    else {nameArr = firstNamesMale.concat(firstNamesFemale, firstNamesGenderNeutral);}
 
     // concatenate the name
-    return `${nameArr[Math.random() * nameArr.length()]} ${lastNames[Math.random() * lastNames.length()]}`;
-}
-*/
-
-function generateAlignment() {
-    return alignments[Math.random() * alignments.length()];
+    return `${nameArr[Math.floor(Math.random() * nameArr.length)]} ${lastNames[Math.floor(Math.random() * lastNames.length)]}`;
 }
 
-function generateClass() {
-    return classes[Math.random() * classes.length()];
-}
+function generateAlignment() {return alignments[Math.floor(Math.random() * alignments.length)];}
+
+function generateClass() {return classes[Math.floor(Math.random() * classes.length)];}
 
 function generateGender() {
-    return genders[Math.random() * genders.length()];
+    if (gender.value == "Male") {return "Male";}
+    else if (gender.value == "Female") {return "Female";}
+    else if (gender.value == "Nonbinary") {return "Nonbinary";}
+    else {return genders[Math.floor(Math.random() * genders.length)];}
 }
 
-function generateLikesAndDislikes() {
-    return likesAndDislikes[Math.random() * likesAndDislikes.length()];
-}
+function generateLikesAndDislikes() {return likesAndDislikes[Math.floor(Math.random() * likesAndDislikes.length)];}
 
 function generateRace() {
-    return races[Math.random() * races.length()];
-}
+    if (race.value == "Human") {return "Human";}
+    else if (race.value == "Dwarf") {return "Dwarf";}
+    else if (race.value == "Elf") {return "Elf";}
+    else if (race.value == "Halfling") {return "Halfling";}
+    else {return races[Math.floor(Math.random() * races.length)];}
+    }
 
-function d6Roll() {
-    return Math.random() * 6;
-}
+function d6Roll() {return Math.floor(Math.random() * 6);}
 
-function generateBaseStat() {
-    return d6Roll() + d6Roll() + d6Roll();
-}
+function generateBaseStat() {return d6Roll() + d6Roll() + d6Roll();}
 
 function createChar() {
-    var charRace = generateRace();
-    var charGender = generateGender();
-    var charClass = generateClass();
-    var charAlignment = generateAlignment();
-    var charStr = generateBaseStat();
-    var charDex = generateBaseStat();
-    var charCon = generateBaseStat();
-    var charInt = generateBaseStat();
-    var charWis = generateBaseStat();
-    var charCha = generateBaseStat();
     var likes = generateLikesAndDislikes();
     var dislikes = generateLikesAndDislikes();
 
     while (dislikes == likes) {dislikes = generateLikesAndDislikes();}
+
+    document.getElementById('outputName').innerHTML = generateName();
+    document.getElementById('outputRace').innerHTML = generateRace();
+    document.getElementById('outputGender').innerHTML = generateGender();
+    document.getElementById('outputClass').innerHTML = generateClass();
+    document.getElementById('outputAlignment').innerHTML = generateAlignment();
+    document.getElementById('outputSTR').innerHTML = generateBaseStat();
+    document.getElementById('outputDEX').innerHTML = generateBaseStat();
+    document.getElementById('outputCON').innerHTML = generateBaseStat();
+    document.getElementById('outputINT').innerHTML = generateBaseStat();
+    document.getElementById('outputWIS').innerHTML = generateBaseStat();
+    document.getElementById('outputCHA').innerHTML = generateBaseStat();
+    document.getElementById('outputLikes').innerHTML = likes;
+    document.getElementById('outputDislikes').innerHTML = dislikes;
 }
+
+button.addEventListener('click', createChar);

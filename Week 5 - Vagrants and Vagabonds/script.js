@@ -4,7 +4,6 @@
 const gender = document.getElementById('gender');
 const race = document.getElementById('race');
 const submit = document.getElementById('submit');
-const button = document.getElementById('submit');
 
 // Arrays for random generation
 var firstNamesMale = ['John', 'Legolas', 'George', 'Richard',  'Danny', 'Huckleberry', 'Clint', 'Woodsworth', 'Reginald'];
@@ -83,4 +82,4 @@ function createChar() {
     document.getElementById('outputDislikes').innerHTML = dislikes;
 }
 
-button.addEventListener('click', createChar);
+submit.addEventListener('click', createChar);

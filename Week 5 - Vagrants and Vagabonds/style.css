@@ -33,12 +33,30 @@ body {
 
 #output {
     border: 1px solid blue;
-    text-align: center;
     font-size: 24pt;
     width: 80%;
     margin: auto;
     padding: 1em;
+}
+
+#output label {
     display: block;
+    float: left;
+    margin: auto;
+}
+
+#output span {
+display: block;
+text-align: left;
+}
+
+span {
+    color: red;
+    text-shadow: 1px 1px black;
+}
+
+label {
+    font-weight: bold;
 }
 
 /* make font responsive */

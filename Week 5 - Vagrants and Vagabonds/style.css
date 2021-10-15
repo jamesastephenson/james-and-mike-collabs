@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MedievalSharp', sans-serif;
+    background-color: rgb(241, 216, 182);
+}
+
+#header {
+    width: 100%;
+    /*background-image: linear-gradient(to bottom, #1D1D1D, #535353 );*/
+    text-align: center;
+    padding: .5em;
+    border-radius: 15px;
+}
+
+#input {
+    border: 1px solid red;
+    text-align: center;
+    font-size: 24pt;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+#input select {
+    font-size: 20pt;
+    font-family: 'MedievalSharp', sans-serif;
+}
+
+#output {
+    border: 1px solid blue;
+    text-align: center;
+    font-size: 24pt;
+    width: 80%;
+    margin: auto;
+    padding: 1em;
+    display: block;
+}
+
+/* make font responsive */
+
+#submit {
+    font-size: 20pt;
+    font-family: 'MedievalSharp', sans-serif;
+}
+
+
+
+
+
+/* -------- media queries -------------- */
+
+@media only screen and (max-width: 600px) {
+    img { 
+        width: 10em;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    h1 {
+        font-size: 3em;
+    }
+
+    img { 
+        width: 10em;
+        border-radius: 8px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    img { 
+        width: 16em;
+        border-radius: 8px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    img { 
+        width: 16em;
+        border-radius: 8px;
+    }
+}

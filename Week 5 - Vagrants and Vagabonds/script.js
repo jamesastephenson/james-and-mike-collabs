@@ -1,6 +1,4 @@
-// note to self: let checked status of radio buttons or dropdown choices be used as an argument in functions
-    // this way you can change what the function will output based on this, rather than making a million different functions
-
+// Get DOM elements
 const gender = document.getElementById('gender');
 const race = document.getElementById('race');
 const submit = document.getElementById('submit');
@@ -22,6 +20,7 @@ var likesAndDislikes = [
     'Architecture', 'Skeletons', 'Goblins', 'Charity', 'Fine Linen',
     'Vagrants', 'Vagabonds', 'Dragons', 'Dungeons', 'Scholarship'];
 
+// Generate random name
 function generateName() {
     // define our array
     var nameArr = [];
@@ -32,14 +31,17 @@ function generateName() {
     else if (gender.value == 'Nonbinary') {nameArr = firstNamesGenderNeutral;} 
     else {nameArr = firstNamesMale.concat(firstNamesFemale, firstNamesGenderNeutral);}
 
-    // concatenate the name
+    // concatenate the name w/ random index position
     return `${nameArr[Math.floor(Math.random() * nameArr.length)]} ${lastNames[Math.floor(Math.random() * lastNames.length)]}`;
 }
 
+// Generate random alignment 
 function generateAlignment() {return alignments[Math.floor(Math.random() * alignments.length)];}
 
+// Generate random class
 function generateClass() {return classes[Math.floor(Math.random() * classes.length)];}
 
+// Generate random gender or user choice
 function generateGender() {
     if (gender.value == "Male") {return "Male";}
     else if (gender.value == "Female") {return "Female";}
@@ -47,20 +49,25 @@ function generateGender() {
     else {return genders[Math.floor(Math.random() * genders.length)];}
 }
 
+// Generate random likes / dislikes
 function generateLikesAndDislikes() {return likesAndDislikes[Math.floor(Math.random() * likesAndDislikes.length)];}
 
+// Generate random race or user choice
 function generateRace() {
     if (race.value == "Human") {return "Human";}
     else if (race.value == "Dwarf") {return "Dwarf";}
     else if (race.value == "Elf") {return "Elf";}
     else if (race.value == "Halfling") {return "Halfling";}
     else {return races[Math.floor(Math.random() * races.length)];}
-    }
+}
 
-function d6Roll() {return Math.floor(Math.random() * 6);}
+// six sided die roll
+function d6Roll() {return Math.floor(Math.random() * 6) + 1;}
 
+// 3 d6 roll
 function generateBaseStat() {return d6Roll() + d6Roll() + d6Roll();}
 
+// call all functions and output to html
 function createChar() {
     var likes = generateLikesAndDislikes();
     var dislikes = generateLikesAndDislikes();
